@@ -16,4 +16,5 @@ modification du tableau stats afin q'il soit pllus lisible
 
 création du block partenaires de l'association
 
+création du block commentaires
 
