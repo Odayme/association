@@ -18,3 +18,6 @@ création du block partenaires de l'association
 
 création du block commentaires
 
+création du formulaire de contact
+
+intégration des données personnelles et mentions légales via un lien sur une nouvelle page
