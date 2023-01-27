@@ -1,3 +1,3 @@
-création du site
+création de la 2ème page contenant les crédits, mentions légales et données personnelles
 
-test
+
