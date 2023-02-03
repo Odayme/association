@@ -1,0 +1,205 @@
+html, body {
+    overflow: auto;
+}
+
+main {
+    width: auto;
+    height: auto;
+}
+
+/** navbar **/
+header {
+    background-color: black;
+    }
+
+    .navbar {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    
+    }
+
+    ol {
+    list-style: none;
+    display: flex;
+    font-size: 1.2rem;
+    }
+
+    ol li {
+        margin: 0 20px;
+        padding: 10px 20px;
+        position: relative;
+        transition: all 0.2s;
+        transition-delay: 0.2s;
+    }
+
+    ol li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    ol li::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transition: all 0.2s;
+    }
+
+    ol li:hover::before {
+        bottom: 40px;
+        background: rgb(255, 63, 63);
+    }
+
+    ol li:hover {
+        background: rgb(255, 63, 63);
+    }
+
+    .navbar h2 {
+        color: white;
+        text-align: left;
+        justify-content: right;
+    }
+
+
+    div.table-title {
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+    }
+
+    .table-title h3 {
+    color: #fafafa;
+    font-size: 30px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+    }
+/** main **/
+
+main {
+    background-color: black;
+}
+
+h1{
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 100px;
+    text-decoration: underline;
+}
+
+h3 {
+    text-decoration: underline;
+    
+    text-align: center;
+}
+
+#block1 {
+    height: auto;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.row {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+#background1 {
+    background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+    color: white;
+    padding-top: 100px;
+}
+
+#container1 {
+    width: auto;
+    height: auto;
+    color: white;
+    margin-top: 100px;
+    background-image: linear-gradient(109deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 38%,transparent 38%, transparent 100%),linear-gradient(324deg, transparent 0%, transparent 31%,rgba(149, 149, 149,0.04) 31%, rgba(149, 149, 149,0.04) 99%,transparent 99%, transparent 100%),linear-gradient(259deg, transparent 0%, transparent 11%,rgba(149, 149, 149,0.04) 11%, rgba(149, 149, 149,0.04) 57%,transparent 57%, transparent 100%),linear-gradient(221deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 37%,transparent 37%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+}
+
+#container2 {
+    color: white;
+    margin-top: 100px;
+    background-image: linear-gradient(283deg, rgba(228, 228, 228,0.04) 0%, rgba(228, 228, 228,0.04) 30%,rgba(130, 130, 130,0.04) 30%, rgba(130, 130, 130,0.04) 49%,rgba(31, 31, 31,0.04) 49%, rgba(31, 31, 31,0.04) 100%),linear-gradient(297deg, rgba(228, 228, 228,0.04) 0%, rgba(228, 228, 228,0.04) 20%,rgba(130, 130, 130,0.04) 20%, rgba(130, 130, 130,0.04) 60%,rgba(31, 31, 31,0.04) 60%, rgba(31, 31, 31,0.04) 100%),linear-gradient(242deg, rgba(228, 228, 228,0.04) 0%, rgba(228, 228, 228,0.04) 29%,rgba(130, 130, 130,0.04) 29%, rgba(130, 130, 130,0.04) 48%,rgba(31, 31, 31,0.04) 48%, rgba(31, 31, 31,0.04) 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+}
+
+#container3 {
+    width: auto;
+    height: auto;
+    color: white;
+    margin-top: 100px;
+    background-image: linear-gradient(0deg, transparent 0%, transparent 60%,rgba(183, 183, 183,0.05) 60%, rgba(183, 183, 183,0.05) 93%,transparent 93%, transparent 100%),linear-gradient(135deg, transparent 0%, transparent 55%,rgba(183, 183, 183,0.05) 55%, rgba(183, 183, 183,0.05) 84%,transparent 84%, transparent 100%),linear-gradient(0deg, transparent 0%, transparent 80%,rgba(183, 183, 183,0.05) 80%, rgba(183, 183, 183,0.05) 94%,transparent 94%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+}
+
+#container4 {
+    color: white;
+    margin-top: 100px;
+    background-image: linear-gradient(324deg, transparent 0%, transparent 45%,rgba(186, 186, 186,0.04) 45%, rgba(186, 186, 186,0.04) 47%,transparent 47%, transparent 100%),linear-gradient(208deg, transparent 0%, transparent 40%,rgba(186, 186, 186,0.04) 40%, rgba(186, 186, 186,0.04) 80%,transparent 80%, transparent 100%),linear-gradient(202deg, transparent 0%, transparent 20%,rgba(186, 186, 186,0.04) 20%, rgba(186, 186, 186,0.04) 40%,transparent 40%, transparent 100%),linear-gradient(338deg, transparent 0%, transparent 10%,rgba(186, 186, 186,0.04) 10%, rgba(186, 186, 186,0.04) 72%,transparent 72%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+}
+
+
+#image1 {
+    border-radius: 30px;
+    margin-top: 20px;
+    height: 90%;
+    width: 90%;
+    }
+  
+    #image2 {
+      border-radius: 30px;
+      margin-top: 20px;
+      height: 90%;
+      width: 90%;
+    }
+  
+    #image3 {
+        margin-top: 20px;
+        border-radius: 30px;
+        width: 90%;
+        height: 90%;
+    }
+  
+    #image4 {
+      margin-top: 50px;
+      border-radius: 30px;
+      width: 90%;
+      height: 90%;
+      overflow: auto;
+    }
+
+    #image5 {
+        height: 90%;
+        width: 90%;
+        border-radius: 30px;
+    }
+
+ /** bouton haut de la page **/
+ #bouton {
+    background-color: white;
+    color: black;
+  }
+
+  #rappel {
+    font-size: 20px;
+  }
+
+  /** footer **/
+  footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+  }

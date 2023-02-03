@@ -1,0 +1,516 @@
+
+            html, body {
+              overflow: auto;
+          }
+
+            html {
+                height: 100%; 
+            }
+            
+            body {
+                display: block;
+               background:url(https://www.alotra.fr/images/client/slider-agir-2.jpg) ;
+                background-size:cover;
+                
+                }   
+            /** titre stylisé **/
+                #titre {
+  
+            font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+            font-size: 1em;
+            font-weight: 700;
+            text-align: center;
+            align-items: center;
+            margin-top: 30px;
+            }
+            #titre span {
+            display: inline-block;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 500;
+            -webkit-font-smoothing: antialiased;
+            }
+            #titre span::before,
+            #titre span::after {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: -1px;
+            transform-origin: left top;
+            transition: all ease-out 0.3s;
+            content: attr(data-text);
+            }
+            #titre span::before {
+            z-index: 1;
+            color: rgba(0,0,0,0.2);
+            transform: scale(1.1, 1) skew(0deg, 20deg);
+            }
+            #titre span::after {
+            z-index: 2;
+            color: white;
+            text-shadow: -1px 0 1px white, 1px 0 1px rgba(0,0,0,0.8);
+            transform: rotateY(-40deg);
+            }
+            #titre span:hover::before {
+            transform: scale(1.1, 1) skew(0deg, 5deg);
+            }
+            #titre span:hover::after {
+            transform: rotateY(-10deg);
+            }
+            #titre span + span {
+            margin-left: 0.3em;
+            }
+            @media (min-width: 5em) {
+                #titre {
+                font-size: 1em;
+            }
+            #titre span::before,
+            #titre span::after {
+                display: block;
+            }
+            }
+            @media (min-width: 10em) {
+                #titre {
+                font-size: 1.5em;
+            }
+            }
+            @media (min-width: 20em) {
+                #titre {
+                font-size: 2.5em;
+            }
+            }
+            @media (min-width: 30em) {
+                #titre {
+                font-size: 4em;
+            }
+            }
+                            
+            
+
+           h2 {
+                text-align: center;
+            }
+              
+             /* 2 container espacés */
+            
+             #container {
+                
+                justify-content: center;
+                margin-top: 10px;
+                display: block;
+                
+               
+                
+                
+            }
+            .col1 {
+                
+                border-radius: 30px;
+                display: block;
+                color: white;
+                background:rgba(0, 0, 0, 5);
+                text-align: center;
+                margin-top: 40px;
+                opacity:0.82;
+            }
+            .col2 {
+                
+                border-radius: 30px;
+                display: block;
+                text-align: center;
+                color: white;
+                background:rgba(0, 0, 0, 5);
+                margin-top: 70px;
+                opacity:0.82;
+            }
+            
+
+            
+
+            /* création de la navbar animé et responsive*/
+            header {
+            background-color: black;
+            }
+
+            .navbar {
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+            
+            }
+
+            ol {
+            list-style: none;
+            display: flex;
+            font-size: 1.2rem;
+            }
+
+            ol li {
+                margin: 0 20px;
+                padding: 10px 20px;
+                position: relative;
+                transition: all 0.2s;
+                transition-delay: 0.2s;
+            }
+
+            ol li a {
+                color: white;
+                text-decoration: none;
+            }
+
+            ol li::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transition: all 0.2s;
+            }
+
+            ol li:hover::before {
+                bottom: 40px;
+                background: rgb(255, 63, 63);
+            }
+
+            ol li:hover {
+                background: rgb(255, 63, 63);
+            }
+
+            .navbar h2 {
+                color: white;
+                text-align: left;
+                justify-content: right;
+            }
+
+
+            div.table-title {
+            display: block;
+            margin: auto;
+            max-width: 600px;
+            padding:5px;
+            width: 100%;
+            }
+
+            .table-title h3 {
+            color: #fafafa;
+            font-size: 30px;
+            font-weight: 400;
+            font-style:normal;
+            font-family: "Roboto", helvetica, arial, sans-serif;
+            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+            text-transform:uppercase;
+            }
+
+
+            /*** test d'un tableau beaucoup trop long **/
+
+            .table-fill {
+            background: white;
+            border-radius:3px;
+            border-collapse: collapse;
+            height: 320px;
+            margin: auto;
+            max-width: 600px;
+            padding:5px;
+            width: 100%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: float 5s infinite;
+            margin-top: 100px;
+            opacity: 0.87;
+            }
+            
+            th {
+            color:#D5DDE5;
+            background:#1b1e24;
+            border-bottom:4px solid #9ea7af;
+            border-right: 1px solid #9ea7af;
+            font-size:23px;
+            font-weight: 100;
+            padding:24px;
+            text-align:center;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            vertical-align:middle;
+            }
+
+            th:first-child {
+            border-top-left-radius:3px;
+            }
+            
+            th:last-child {
+            border-top-right-radius:3px;
+            border-right:none;
+            }
+            
+            tr {
+            border-top: 1px solid #C1C3D1;
+            border-bottom: 1px solid #C1C3D1;
+            color:#D5DDE5;
+            font-size:16px;
+            font-weight:normal;
+            text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+            }
+            
+            tr:hover td {
+            background:black;
+            color:#FFFFFF;
+            border-top: 1px solid #22262e;
+            
+            }
+            
+            tr:first-child {
+            border-top:none;
+            }
+
+            tr:last-child {
+            border-bottom:none;
+            }
+            
+            tr:nth-child(odd) td {
+            background:#1b1e24;
+            }
+            
+            tr:nth-child(odd):hover td {
+            background:black;
+            }
+
+            tr:last-child td:first-child {
+            border-bottom-left-radius:3px;
+            }
+            
+            tr:last-child td:last-child {
+            border-bottom-right-radius:3px;
+            }
+            
+            td {
+            background:#1b1e24;
+            padding:20px;
+            text-align:center;
+            vertical-align:middle;
+            font-weight:300;
+            font-size:18px;
+            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #C1C3D1;
+            }
+
+            td:last-child {
+            border-right: 0px;
+            }
+
+            th.text-left {
+            text-align: center;
+            }
+
+            th.text-center {
+            text-align: center;
+            }
+
+            th.text-right {
+            text-align: center;
+            }
+
+            td.text-left {
+            text-align: center;
+            }
+
+            td.text-center {
+            text-align: center;
+            }
+
+            td.text-right {
+            text-align: center;
+            }
+            
+            #image {
+              background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+                background-size: cover;
+            }
+
+            /** partenaires **/
+            #image2 {
+                display: block;
+              background:url(https://www.treatmentadvocacycenter.org/storage/images/blog/holding-hands.jpg);
+              background-size: cover;         
+            }
+            #partenaires  {
+                color: white;
+                font-size:60px;
+                font-weight: bold;                     
+            }
+            #collectivités, #financiers, #partenariat  {
+                color:white  ;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            #collectivitéimage, #financiersimage, #partenariatimage {
+                display: block;
+                width: 720px;
+                height: 150px;
+                margin: auto;
+                
+            }
+
+            #partenariatimage {
+              height: 250px;
+            }
+            
+            /** commentaires **/
+          #commentaires {
+            color: white;
+            font-weight: bold;
+            font-size: 60px;
+          }  
+          
+          #logo {
+            height: 130px;
+            width: 130px;
+          }
+
+          #imagecontainer {
+            background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+            background-size: cover;
+          }
+
+          /** formulaire de contact**/
+
+        .wrapper {
+            margin-top: 30px;
+            display: flex;
+             color: white;
+            text-align: center;
+        }
+        
+        .A {
+            width: 30%;
+            border-style:solid;
+            border-width: 1rem;
+            border-color: lightgrey;
+            border-radius: 30px;
+            color: white;
+            text-align: center;
+            align-items: left;
+            height: 250px;
+            margin-left: 200px;
+            margin-top: 200px;
+
+         
+        }
+        
+        .B {
+            width: 40%;
+            color: white;
+            text-align: center;
+            align-items: right;
+            margin-right: 200px;
+        }
+          form {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      -webkit-box-shadow: 0px 0px 36px -7px rgba(171,171,171,1);
+      -moz-box-shadow: 0px 0px 36px -7px rgba(171,171,171,1);
+      box-shadow: 0px 0px 36px -7px rgba(171,171,171,1);
+      border-radius: 20px;
+      
+    }
+
+     .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        overflow: auto;
+     }
+     
+    input, textarea, select {
+      margin-bottom: 1rem;
+      border-radius: 7px;
+      padding: 0.3rem;
+      border: solid 1px;
+    }
+    input, textarea, select {
+        margin-bottom: 1rem;
+        border-radius: 7px;
+        padding: 0.3rem;
+        border: solid 1px;
+      }
+      textarea {
+        max-width: 400px;
+        letter-spacing: 1px;
+      }
+      input:focus, textarea:focus, select:focus, button:focus {
+        outline: none;
+        -webkit-box-shadow: 0px 0px 11px -7px #bac4bf;
+        -moz-box-shadow: 0px 0px 11px -7px #bac4bf;
+        box-shadow: 0px 0px 11px -7px #bac4bf;
+        border: solid 1px #d5e1db;
+      }
+      label {
+        margin-bottom: 0.5rem;
+      }
+      .section-header {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        font: 300 2rem 'Oswald', sans-serif;
+        letter-spacing: 6px;
+        margin-bottom: 25px;
+      }
+      .form-horizontal {
+        max-width: 400px;
+        font-family: 'Lato';
+        font-weight: 400;
+      }
+      .send-button {
+        margin-top: 15px;
+        height: 34px;
+        width: 335px;
+        background-color: #d5e1db;
+        border: none;
+        border-radius: 7px;
+        font: 300 14px 'Lato', sans-serif;
+        letter-spacing: 2px;
+      }
+      .send-button:hover {
+        cursor: pointer;
+        color: white;
+        background-color: #bac4bf;
+      }
+  
+      .advert-wrapper {
+        color:white;
+        font-size: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      #contacter {
+        margin-top: 10px;
+        height: auto;
+        width: auto;
+      }
+
+      /** bouton haut de la page **/
+      #bouton {
+        background-color: black;
+        color: white;
+      }
+
+      #rappel {
+        font-size: 20px;
+      }
+        
+      img {
+        width: 300px;
+        height: 300px;
+        align-items: left;
+        justify-content: left;
+      }  
+            
+          
+
+          
