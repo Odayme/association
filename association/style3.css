@@ -155,35 +155,28 @@ h3 {
 #image1 {
     border-radius: 30px;
     margin-top: 20px;
-    height: 90%;
-    width: 90%;
+    
     }
   
     #image2 {
       border-radius: 30px;
       margin-top: 20px;
-      height: 90%;
-      width: 90%;
+      
     }
   
     #image3 {
         margin-top: 20px;
         border-radius: 30px;
-        width: 90%;
-        height: 90%;
+        
     }
   
     #image4 {
       margin-top: 50px;
       border-radius: 30px;
-      width: 90%;
-      height: 90%;
       overflow: auto;
     }
 
     #image5 {
-        height: 90%;
-        width: 90%;
         border-radius: 30px;
     }
 
@@ -202,4 +195,9 @@ h3 {
     color: white;
     background-color: black;
     text-align: center;
+  }
+
+  img {
+    width: 100%;
+    
   }
