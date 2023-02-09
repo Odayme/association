@@ -13,12 +13,11 @@
     </head>
 
     <body>
-        
 	   <header>
         <!--création de la navbar-->
-        <nav class="navbar">
+        <nav class="navbar nav-pills flex-column flex-sm-row">
             <ol>
-                <li><a href="#présentation" class="nav-link">présentation</a></li>
+                <li><a href="#index.html" class="nav-link">présentation</a></li>
             </ol>
              <ol>
                 <li><a href="#container2" class="nav-link">nos chiffres</a></li>
@@ -194,7 +193,8 @@
                     <p>Email: secretariat@culture-developpement.asso.fr</p>
                 </div> 
                 <div class="B">
-                    <div class="contact-wrapper">
+                    <div class="contact-wrapper container-fluid">
+                        <div class="col-6">
                         <form class="form-horizontal" method="post" action="contact.php">
                             <h1 class="section-header">envoyé nous un message !</h1>
                             <label for="name">Nom</label>
@@ -205,7 +205,8 @@
 
                             <label for="message">Message</label>
                             <textarea rows="10" id="message" name="message" required></textarea>
-                           
+                        </div>
+                        <div class="col-6">    
                             <div class="advert-wrapper">
                                 <p>Données personnelles<br> J'accepte que les informations recueillies à partir de ce formulaire de contact soient transmises à l'association Culture et Développement pour qu'elle puisse traiter ma demande. En savoir plus sur la gestion de vos données et vos droits </p>
                                 <input type="radio" id="yes" name="news-question" value="yes">
@@ -217,6 +218,7 @@
                             <!--création du bouton pour remonter et du petit rappel-->
                             <p id="rappel">n'oubliez pas de regarder nos thèmatiques et projets</p>
                             <a href="#" id="bouton" class="btn btn-default">Retour en haut ↑</a>
+                            </div>
                         </form>
                     </div>
                 </div>
