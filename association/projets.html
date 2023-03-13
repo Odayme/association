@@ -1,289 +1,683 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="uft-8">
-         <title>mon site pour l'association</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" href="style4.css">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"  
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        </head>
-        <body>
-            <header>
-                <!--création de la navbar-->
-                <nav class="navbar nav-pills flex-column flex-sm-row">
+
+<head>
+    <meta charset="uft-8">
+    <title>mon site pour l'association</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+
+    <style>
+        /** navbar **/
+        .nav-link:before {
+
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        ol {
+            list-style: none;
+            display: flex;
+            font-size: 1.2rem;
+        }
+
+        .nav-link {
+            margin: 0 10px;
+            padding: 10px 1px;
+            position: relative;
+            text-align: center;
+            min-width: 115px;
+            transition: all 0.2s;
+            transition-delay: 0.2s;
+        }
+
+        .nav-link a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .nav-link:hover::before {
+            bottom: 2em;
+            background: rgb(255, 63, 63);
+        }
+
+        .nav-link:hover {
+            background: rgb(255, 63, 63);
+        }
+
+
+
+
+        .vignette h2 {
+            font-size: 1.6em;
+        }
+
+
+
+        @media (max-width: 991px) {
+            .nav-link:before {
+                background: #ffffff0d;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                justify-content: center;
+            }
+        }
+
+        body {
+            background: #000;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        /*  petites déco*/
+        .projets h2::before {
+            position: absolute;
+            margin-top: -23px;
+            margin-left: -8px;
+            font-size: 0.6em;
+            color: #5d5d5d;
+            letter-spacing: 1px;
+            transform: rotate(0deg);
+        }
+
+        /*  Espacements des éléments */
+        /*  des projets */
+        section {
+            padding: 70px 0;
+        }
+
+        /*  des rangées */
+        .row {
+            padding: 10px 0;
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        /*  des paragraphes */
+        p {
+            padding: 2px 0 5px;
+        }
+
+        /* des listes */
+        li {
+            margin-bottom: 5px;
+        }
+
+        /*  fin des espacements */
+
+        /* arondi de toutes les images */
+        .img-fluid {
+            border-radius: 20px;
+        }
+
+        .projets {
+            background-image: radial-gradient(circle at 50% 50%, rgb(255 10 10 / 38%) 0%, rgb(0 0 60) 21%, transparent 21%, transparent 100%), radial-gradient(circle at 55% 0%, rgb(0 0 0) 0%, transparent 30%, transparent 100%), radial-gradient(circle at 13% 18%, rgb(255 255 255 / 26%) 0%, rgb(0 0 0) 46.2%, transparent 95%, transparent 100%), radial-gradient(circle at 86% 43%, rgba(209, 209, 209, 0.03) 0%, rgb(114 78 78 / 3%) 83%, #7700001a 83%, transparent 65%), radial-gradient(circle at 64% 13%, rgb(157 185 36 / 24%) 0%, rgba(192, 192, 192, 0.03) 7%, transparent 3%, rgb(0 0 0 / 22%) 5%), radial-gradient(circle at 73% 77%, rgba(205, 205, 205, 0.03) 0%, rgb(109 28 28 / 0%) 18%, transparent 18%, transparent 100%), radial-gradient(circle at 1% 2%, rgb(250 13 13 / 91%) 2%, rgb(4 29 0) 5%, #38323214 41%, transparent 100%), radial-gradient(circle at 40% 84%, rgba(115, 115, 115, 0.03) 0%, rgb(35 81 125 / 57%) 15%, transparent 14%, transparent 100%), linear-gradient(126deg, rgb(1 27 61), rgb(0, 0, 0));
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <header>
+        <!--création de la navbar-->
+        <nav class=" navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="projets.html"><img src="img/culture-developpement.png"></a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-white" href="./index.html">Présentation</a>
+                        <a class="nav-link text-white" href="./index.html#chiffres">Nos chiffres</a>
+                        <a class="nav-link text-white" href="./index.html#partenaires">Partenaires</a>
+                        <a class="nav-link text-white" href="./index.html#temoignages">Témoignages</a>
+                        <a class="nav-link text-white" href="./index.html#contact">Contact</a>
+                        <a class="nav-link text-white" href="./thématiques.html">Thématiques</a>
+                        <a class="nav-link text-white" href="./projets.html">Projets</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--création des projets-->
+    <div class="container-fluid projets">
+        <h1 class="text-center my-5">NOS PROJETS</h1>
+        <!-- projets : LE CERCLE DE POTO POTO-->
+        <section id="projet_1">
+            <div class="row">
+                <h2 class="text-center projet">LE CERCLE DE POTO POTO</h2>
+                <p>Brazzaville développe depuis une dizaine d’années une politique volontariste pour la promotion de
+                    la culture et du patrimoine, qui l’a amenée à développer un plan stratégique de développement
+                    culturel, réalisé avec Culture et développement, et grâce à ce travail, être labellisée « Ville
+                    créative » par l’UNESCO en 2014.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/large-1_web.jpg"
+                        class="img-fluid">
+                </div>
+                <div class="col-md-7" id="block">
+
+                    <p>Dans la commune de Poto-Poto, le Cercle culturel a vocation à retrouver toute sa place pour
+                        l’animation de la vie culturelle, favorisant le vivre-ensemble et le développement des métiers
+                        du spectacle.</p>
+                    <p>L’objectif à terme est l’émergence d’un nouveau quartier créatif à Brazzaville.</p>
+                    <p>Culture et Développement assiste ainsi techniquement la Mairie et l’Association Internationale
+                        des Maires Francophones (AIMF) dans la conception et réalisation de ce projet (2020-2023), dans
+                        le cadre de son partenariat de longue durée avec la Mairie et ses associations locales.</p>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- projets LA PROPOSITION DES HAUTS-BASSINS -->
+        <section id="projet_2">
+            <div class="row">
+                <h2>APPUI À LA DÉFINITION DE LA PROPOSITION DES HAUTS-BASSINS POUR LA CULTURE 2020-2022</h2>
+                <p>Le Programme Transfo (2018-2020) s’appuie sur une démarche multi-acteurs à mettre en œuvre au
+                    niveau institutionnel et à celui des acteurs de terrain. </p>
+                <h3>Au niveau institutionnel:</h3>
+                <p>le Conseil
+                    régional, la Chambre de commerce et d’industrie, le Gouvernorat. Dans le cadre de sa
+                    coopération avec le Conseil régional des Hauts Bassins, Culture et Développement, accompagne
+                    le processus de préparation du Plan régional des Hauts Bassins pour la culture, qui servira à
+                    intégrer le secteur culturel dans la stratégie régionale de développement qui n’en avait pas
+                    tenu compte.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-7" id="block1">
+                    <h3>Objectifs spécifiques :</h3>
+                    <ul>
+                        <li>1. Appuyer le Conseil régional à son document régional d’orientation du développement de
+                            la
+                            culture et de son économie sur leur territoire ; Contribuer à améliorer la gouvernance
+                            locale
+                            du secteur culturel et à renforcer leurs capacités à atteindre les objectifs fixés par
+                            le
+                            PNDES au Burkina Faso</li>
+                        <li>2. Appuyer le Conseil régional des Hauts Bassins à s’insérer dans le programme-pilote de
+                            l’UE
+                            d’appui en matière de culture qui lui est dédié et à bénéficier des fonds lui
+                            permettant
+                            de soutenir et d’accompagner la mise en valeur des potentialités culturelles et
+                            touristiques
+                            régionales, le développement des entreprises et activités des filières culturelles
+                            désignées comme prioritaires : cinéma et audiovisuel, arts vivants (musique, théâtre,
+                            conte), textile et stylisme, design et artisanat d’art.</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 d-flex align-items-center text-center">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/hautsbassins1.jpg"
+                        class="img-fluid">
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/hautsbassins2.jpg"
+                            class="img-fluid">
+                    </div>
+
+                    <div class="col-md-9 d-flex align-items-center">
+                        <ul>
+                            <li>Lieu : Région des Hauts Bassins, Burkina Faso</li>
+                            <li>Public cible : Il s’adressera aussi aux entreprises et associations culturelles,
+                                essentiellement à travers les collectifs existants tels que Sya Ben, Siraba ainsi
+                                qu’aux
+                                établissements d’enseignement secondaire et aux communautés traditionnelles porteuses
+                                de
+                                savoir-faire artisanaux</li>
+                            <li>Durée : Triennale septembre 2018- septembre 2023</li>
+                            <li>Etat du projet : En cours</li>
+                            <li>Partenaires : Conseil Régional des Hauts-Bassins (convention de coopération avec
+                                Culture
+                                et
+                                Développement), Région Auvergne Rhône-Alpes</li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+        <!-- projets RÊVE. RÉ-IMAGINER LA VILLE ENSEMBLE -->
+        <section id="projet_3">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="https://res.cloudinary.com/hm3mec8bl/image/upload/v1553605345/k55znbidh2q7c02bu1nn.jpg"
+                        class="img-fluid" alt="epicerie solidaire" title="epicerie solidaire">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="mb-3">RÊVE. RÉ-IMAGINER LA VILLE ENSEMBLE</h2>
+                    <p>RÊVE-Ré-imaginer la ville ensemble- est un projet mis en œuvre dès novembre 2018 par
+                        Culture et Développement, Culture Ailleurs, Spacejunk et de nombreux partenaires locaux, dans
+                        les
+                        quartiers de Mistral et Villeneuve.</p>
+                    <p>Afin de favoriser les connexions sociales, RÊVE propose aux habitant.e.s des quartiers
+                        Grenoblois des interventions artistiques dans les espaces d’attente des transports en commun
+                        et des espaces publics.</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <p>Le projet cherche à lier culture et mobilité pour développer des nouveaux imaginaires et
+                    des
+                    espaces de partage et interroger sur les inégalités existantes sur le territoire de la
+                    métropole tout en promouvant les arts et la culture.</p>
+                <p>Il s’inscrit dans l’axe Cohésion sociale (santé, accès aux droits et non recours,
+                    éducation
+                    et parentalité, prévention de la délinquance et tranquillité publique, culture – loisirs
+                    et
+                    sports) – l’un des objectifs du contrat de ville 2015 – 2020 de la métropole grenobloise.
+                </p>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <ul>
+                        <li>Lieu : Quartiers de Grenoble : Mistral et Villeneuve</li>
+                        <li>Public ciblé : Habitants des quartiers Mistral et Villeneuve</li>
+                        <li>Durée : 2018-2020</li>
+                        <li>Etat du projet : En cours</li>
+                        <li>Partenaires : Culture Ailleurs ; ICCART ; Grenoble – Alpes Métropole (communauté
+                            d’agglomération) ; Ville de Grenoble ; Département de l’Isère ; Direction régionale des
+                            affaires culturelles</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/reve2.jpg"
+                        class="img-fluid" alt="epicerie solidaire parcours" title="epicerie solidaire parcours">
+                </div>
+            </div>
+        </section>
+        <!-- projets CRÉER EN AFRIQUE CENTRALE -->
+        <section id="projet_4">
+
+            <div class="row">
+                <h2>CRÉER EN AFRIQUE CENTRALE</h2>
+                <div class="col-md-6">
+                    <p>Objectif général : Soutenir les industries culturelles et créatives (ICC) dans la région
+                        d’Afrique centrale en tant que catalyseur de développement socio-économique durable.</p>
+                    <p>Les pays d’intervention : France, Sénégal, Egypte, Burkina Faso, Côte d’Ivoire, Haïti,
+                        Guadeloupe, République du Congo, République Démocratique du Congo, Maroc + pays d’Afrique
+                        centrale (pour le projet Créer en Afrique centrale), Monde (activités de plaidoyer et de
+                        conseil
+                        auprès des organisations internationales).</p>
+                    <ul>
+                        <li>Lieu : Afrique – Europe</li>
+                        <li>Durée : 2020 - 2024</li>
+                        <li>Etat du projet : En cours</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+
+                        <li>Public cible : Les entreprises composant les différentes filières des ICC à but lucratif
+                            (dont PME/PMI, coopératives, ESS), les organisations de la société civile (OSC) des
+                            secteurs
+                            culturels et créatifs (SCC) ; les institutions culturelles et artistiques publiques et
+                            privées
+                            ; les centres de formation publics et privés ; les établissements bancaires et
+                            institutions
+                            financières ; les chambres de commerce et des métiers ; les administrations publiques
+                            (locales, nationales, régionales) en charge en particulier de la culture, de l’emploi, de
+                            la
+                            formation professionnelle, du développement des entreprises et du commerce intérieur et
+                            extérieur</li>
+
+                        <li>Partenaires : Interarts, Culture et Développement, la Communauté Economique des Etats de
+                            l’Afrique Centrale, et l’Institut National des Arts in Kinshasa. Le Centre régional pour
+                            les
+                            Arts Vivants en Afrique – CERAV/Afrique, Arterial Network et Cités et Gouvernements Locaux
+                            Unis
+                            d’Afrique (CGLU Afrique) sont partenaires associés du projet.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="https://api.time.com/wp-content/uploads/2020/10/african-artifacts-return-museums.jpg"
+                        class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <!-- projets RÉGION DU BÉLIER CÔTE D’IVOIRE -->
+        <section id="projet_5">
+            <div class="row">
+                <div class="col-md-4 d-flex align-items-center text-center">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/belier1.jpg"
+                        class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <h2>APPUI À LA DÉFINITION DE LA STRATÉGIE DE DÉVELOPPEMENT DE LA CULTURE, TOURISME ET
+                        ARTISANAT
+                        D’ART – RÉGION DU BÉLIER CÔTE D’IVOIRE</h2>
+                    <p>Le Programme Transfo (2018-2020) s’appuie sur une démarche multi-acteurs à mettre en œuvre
+                        au niveau institutionnel et à celui des acteurs de terrain. Le volet Région du Bélier (Côte
+                        d’Ivoire) se centre sur l’appui à la définition de la stratégie de développement de la
+                        culture, tourisme et artisanat d’art, ayant comme perspective la diversification et le
+                        renforcement du tissu productif et une meilleure diffusion internationale en renforçant les
+                        acteurs locaux.</p>
+                    <h3>Objectif général:</h3>
+                    <p> Promouvoir le Conseil régional du Bélier et les communes qui le composent
+                        comme partenaires importants du ministère ivoirien de la Culture et de la Francophonie pour
+                        le développement culturel du Bélier et notamment la sauvegarde et la valorisation de son
+                        patrimoine culturel.</p><br>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 d-flex align-items-center">
+                    <ul>
+                        <li>Lieu : Région du Bélier</li>
+                        <li>Public ciblé : Conseil régional et aux acteurs privés et associatifs de la lecture, du
+                            patrimoine culturel immatériel et de l’artisanat d’art ainsi qu’aux opérateurs de
+                            festivals</li>
+                        <li>Durée : triennale 2018-2023</li>
+                        <li>Etat du projet : En cours</li>
+                        <li>Partenaires : Région Auvergne Rhône-Alpes, le Conseil régional du Bélier, la Chambre de
+                            commerce et d’industrie de Côte d’Ivoire, et la Chambre des métiers et de l’artisanat.
+                            Clubs de francophonie du Bélier</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/belier2.jpg"
+                        class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projet_6">
+            <div class="row">
+                <h2 class="text-center">PROGRAMME TERRITOIRES ASSOCIÉS</h2>
+                <p>Conçu en collaboration avec des collectivités partenaires, “Territoires Associés, le
+                    développement par la culture” a la volonté de mettre à disposition des ressources
+                    sélectionnées, d’être un espace de réflexion et d’innovation sur les pratiques, en plus
+                    d’être un espace de conception de projets fédérateurs. Le programme Territoires associés
+                    vise à valoriser et à mettre en lien les évolutions et les spécificités du secteur culturel
+                    et artistique avec celles de la coopération et de la solidarité internationales.</p>
+                <h3>Objectif général :</h3>
+                <p>Contribuer à la réalisation de projets de coopération culturelle aux
+                    plans national et surtout local basés sur une plus grande intégration de la culture dans
+                    des
+                    stratégies inclusives d’animation des territoires locaux et de renforcer les capacités des
+                    collectivités locales d’Afrique francophone à encadrer et créer les conditions favorables
+                    à l’essor du secteur culturel et à la promotion de la diversité des expressions culturelles.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <h3>Objectifs spécifiques :</h3>
                     <ol>
-                        <li><a href="index.html#présentation" class="nav-link">présentation</a></li>
+                        <li>Identifier et recenser des initiatives de coopération culturelle Sud-Sud et Nord-Sud et
+                            les relier par une plateforme en ligne</li>
+                        <li>Fournir une assistance technique aux collectivités locales pour la conception, la
+                            réalisation et la mutualisation des projets, si possible</li>
+                        <li>Offrir un cadre de réflexion et d’action multi-acteurs pour la prise en compte de la
+                            culture dans les programmes de développement local</li>
+                        <li>Accompagner par une formation en France le directeur du développement culturel de la
+                            mairie de Brazzaville et l’attaché culturel aux méthodes d’élaboration, de planification
+                            et de
+                            suivi des politiques publiques et de préparation de notes pour le Maire.</li>
                     </ol>
-                     <ol>
-                        <li><a href="index.html#container2" class="nav-link">nos chiffres</a></li>
-                    </ol>
-                     <ol>
-                        <li><a href="index.html#partenaires" class="nav-link">partenaires</a></li>
-                    </ol>
-                     <ol>
-                        <li><a href="index.html#commentaires" class="nav-link">témoignages</a></li>
-                    </ol>
-                    <ol>
-                        <li><a href="index.html#contact" class="nav-link">nous contacter</a></li>
-                    </ol>
-                     <ol>
-                        <li><a href="thématiques.html" class="nav-link">thématiques</a></li>
-                    </ol>
-                    <ol>
-                        <li><a href="./projets.html" class="nav-link">projets</a></li>
-                    </ol>
-                </nav>
-               </header>
-               <!--création des projets-->
-               <main>
-                <div class="container-fluid" id="container1">  
-                    <h1>NOS PROJETS</h1><br>
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/large-1_web.jpg" id="image">
-                           </div>
-                      <div class="col-6 " id="block">
-                        <h3>– LE CERCLE DE POTO POTO –</h3><br><br>
-                             <p>Brazzaville développe depuis une dizaine d’années une politique volontariste pour la promotion de la culture et du patrimoine, qui l’a amenée à développer un plan stratégique de développement culturel, réalisé avec Culture et développement, et grâce à ce travail, être labellisée « Ville créative » par l’UNESCO en 2014.</p>
-                             <p>Dans la commune de Poto-Poto, le Cercle culturel a vocation à retrouver toute sa place pour l’animation de la vie culturelle, favorisant le vivre-ensemble et le développement des métiers du spectacle.</p>
-                             <p>L’objectif à terme est l’émergence d’un nouveau quartier créatif à Brazzaville.</p>
-                             <p>Culture et Développement assiste ainsi techniquement la Mairie et l’Association Internationale des Maires Francophones (AIMF) dans la conception et réalisation de ce projet (2020-2023), dans le cadre de son partenariat de longue durée avec la Mairie et ses associations locales.</p>
-                        </p>
-                       </div>
-                    </div>
-                </div>
-                
 
-                <div class="container-fluid" id="container5">  
-                    <div class="row">
-                      <div class="col-6 " id="block1">
-                        <h3>– APPUI À LA DÉFINITION DE LA PROPOSITION DES HAUTS-BASSINS POUR LA CULTURE 2020-2022 –</h3><br><br>
-                             <p>Le Programme Transfo (2018-2020) s’appuie sur une démarche multi-acteurs à mettre en œuvre au niveau institutionnel et à celui des acteurs de terrain. Au niveau institutionnel : le Conseil régional, la Chambre de commerce et d’industrie, le Gouvernorat. Dans le cadre de sa coopération avec le Conseil régional des Hauts Bassins, Culture et Développement, accompagne le processus de préparation du Plan régional des Hauts Bassins pour la culture, qui servira à intégrer le secteur culturel dans la stratégie régionale de développement qui n’en avait pas tenu compte.</p>
-                             <p>Objectifs spécifiques : ​
-                                1. Appuyer le Conseil régional à son document régional d’orientation du développement de la culture et de son économie sur leur territoire ; Contribuer à améliorer la gouvernance locale du secteur culturel et à renforcer leurs capacités à atteindre les objectifs fixés par le PNDES au Burkina Faso
-                                2. Appuyer le Conseil régional des Hauts Bassins à s’insérer dans le programme-pilote de l’UE d’appui en matière de culture qui lui est dédié et à bénéficier des fonds lui permettant de soutenir et d’accompagner la mise en valeur des potentialités culturelles et touristiques régionales, le développement des entreprises et activités des filières culturelles désignées comme prioritaires : cinéma et audiovisuel, arts vivants (musique, théâtre, conte), textile et stylisme, design et artisanat d’art.</p><br>
-                             <p>• Lieu : Région des Hauts Bassins, Burkina Faso</p>
-                             <p>• Public cible : Il s’adressera aussi aux entreprises et associations culturelles, essentiellement à travers les collectifs existants tels que Sya Ben, Siraba ainsi qu’aux établissements d’enseignement secondaire et aux communautés traditionnelles porteuses de savoir-faire artisanaux</p>
-                             <p>• Durée : Triennale septembre 2018- septembre 2023</p>
-                             <p>• Etat du projet : En cours</p>
-                             <p>• Partenaires : Conseil Régional des Hauts-Bassins (convention de coopération avec Culture et Développement), Région Auvergne Rhône-Alpes</p>
-                       </div>
-                       <div class="col-6">
-                        <div class="col-3">
-                         <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/hautsbassins1.jpg" id="image1">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/hautsbassins2.jpg" id="image2">
-                        </div>
-                       </div>
-                    </div>
                 </div>
-                  
 
-                <div class="container-fluid" id="container6">
-                    <div class="row">
-                        <div class="col-6" id="block1">
-                            <h3>– RÊVE. RÉ-IMAGINER LA VILLE ENSEMBLE –</h3><br><br>
-                            <p>RÊVE-Ré-imaginer la ville ensemble- est un projet mis en œuvre dès novembre 2018 par Culture et Développement, Culture Ailleurs, Spacejunk et de nombreux partenaires locaux, dans les quartiers de Mistral et Villeneuve.</p><br>
-                            <p>Afin de favoriser les connexions sociales, RÊVE propose aux habitant.e.s des quartiers Grenoblois des interventions artistiques dans les espaces d’attente des transports en commun et des espaces publics.</p><br>
-                            <p>Le projet cherche à lier culture et mobilité pour développer des nouveaux imaginaires et des espaces de partage et interroger sur les inégalités existantes sur le territoire de la métropole tout en promouvant les arts et la culture.</p><br>
-                            <p>Il s’inscrit dans l’axe Cohésion sociale (santé, accès aux droits et non recours, éducation et parentalité, prévention de la délinquance et tranquillité publique, culture – loisirs et sports) – l’un des objectifs du contrat de ville 2015 – 2020 de la métropole grenobloise.</p><br>
-                            <p>• Lieu : Quartiers de Grenoble : Mistral et Villeneuve</p>
-                            <p>• Public ciblé : Habitants des quartiers Mistral et Villeneuve</p>
-                            <p>• Durée : 2018-2020</p>
-                            <p>• Etat du projet : En cours</p>
-                            <p>• Partenaires : Culture Ailleurs ; ICCART ; Grenoble – Alpes Métropole (communauté d’agglomération) ; Ville de Grenoble ; Département de l’Isère ; Direction régionale des affaires culturelles</p>
-                            </div>
-                        <div class="col-6">
-                            <div class="col-3">
-                                <img src="https://res.cloudinary.com/hm3mec8bl/image/upload/v1553605345/k55znbidh2q7c02bu1nn.jpg" id="image3" >
-                            </div>
-                            <div class="col-3">
-                                <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/reve2.jpg" id="image4" >
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-5">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/territoires1.jpg"
+                        class="img-fluid mx-auto d-block">
                 </div>
-                
-                <div class="container-fluid" id="container3">  
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="https://api.time.com/wp-content/uploads/2020/10/african-artifacts-return-museums.jpg" id="image">
-                           </div>
-                      <div class="col-6 " id="block1">
-                        <h3>– CRÉER EN AFRIQUE CENTRALE –</h3><br><br>
-                             <p>Objectif général : Soutenir les industries culturelles et créatives (ICC) dans la région d’Afrique centrale en tant que catalyseur de développement socio-économique durable.</p>
-                             <p>Les pays d’intervention : France, Sénégal, Egypte, Burkina Faso, Côte d’Ivoire, Haïti, Guadeloupe, République du Congo, République Démocratique du Congo, Maroc + pays d’Afrique centrale (pour le projet Créer en Afrique centrale), Monde (activités de plaidoyer et de conseil auprès des organisations internationales).</p><br>
-                             <p>• Lieu : Afrique – Europe</p>
-                             <p>• Public cible : Les entreprises composant les différentes filières des ICC à but lucratif (dont PME/PMI, coopératives, ESS), les organisations de la société civile (OSC) des secteurs culturels et créatifs (SCC) ; les institutions culturelles et artistiques publiques et privées ; les centres de formation publics et privés ; les établissements bancaires et institutions financières ; les chambres de commerce et des métiers ; les administrations publiques (locales, nationales, régionales) en charge en particulier de la culture, de l’emploi, de la formation professionnelle, du développement des entreprises et du commerce intérieur et extérieur</p>
-                             <p>• Durée : 2020 - 2024</p>
-                             <p>• Etat du projet : En cours</p>
-                             <p>• Partenaires :  Interarts, Culture et Développement, la Communauté Economique des Etats de l’Afrique Centrale, et l’Institut National des Arts in Kinshasa. Le Centre régional pour les Arts Vivants en Afrique – CERAV/Afrique, Arterial Network et Cités et Gouvernements Locaux Unis d’Afrique (CGLU Afrique) sont partenaires associés du projet.</p>
-                       </div>
-                    </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/territoires2.jpg"
+                        class="img-fluid">
+
+                </div>
+                <div class="col-md-8 ">
+                    <ul>
+                        <li>Lieu : Kédougou, Brazzaville, Région du Bélier, Yopougon, Ouagadougou, monde</li>
+                        <li>Durée : 2019-2020</li>
+                        <li>Etat du projet : En cours</li>
+                        <li>Partenaires : OIF, Région Auvergne Rhône-Alpes, le département de l’Isère, la Mairie de
+                            Yopougon, la ville de Grenoble, UNESCO</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section id="projet_7">
+            <div class="row d-flex align-items-center">
+
+                <div class="col-md-6">
+                    <h2>MÉDIATHÈQUE MAISON DE SAVOIRS ET DES JEUNES À YOPOUGON, CÔTE D’IVOIRE</h2>
+                    <p>La coopération de la Mairie de Yopougon avec l’AIMF vise à créer une Médiathèque
+                        Maison des
+                        Savoirs et des Jeunes qui servira de tête de réseau pour le développement de la
+                        lecture et
+                        des actions relatives à la citoyenneté et à la jeunesse. En tant que tête du réseau
+                        municipal de lecture publique qui est en cours de constitution, la Médiathèque-Maison
+                        des
+                        Savoirs et des Jeunes sera érigée en service de la Lecture Publique.</p>
+                    <p>Le projet fait suite à un diagnostic des ressources socioculturelles de la Commune, des
+                        besoins
+                        des populations et des actions prioritaires à mettre en œuvre. Une étude préalable
+                        pour le
+                        projet d’équipement et sa réalisation a également été effectuée en partenariat
+                        avec les
+                        services de la Mairie, l’agence d’architecture et d’urbanisme AXO, avec le soutien de la
+                        coopération française</p>
+                    <p>C’est dans ce cadre que Culture et Développement a identifié l’A.I.M.F, dont le Maire
+                        de
+                        Yopougon a sollicité l’appui technique et financier.</p>
+
+
+                </div>
+                <div class="col-md-6">
+                    <img src="https://cdn.aimf.asso.fr/wp-content/uploads/2022/09/Yopougon-Maison-des-savoirs-1024x683.jpg"
+                        class="img-fluid mb-5">
+                    <ul>
+                        <li>Lieu : Commune de Yopougon, Côte d’Ivoire Public ciblé : Tout public (adultes et
+                            jeunesse),
+                            public en formation : alphabétisation – formation professionnelle – formation scolaire
+                            et
+                            universitaire – artisans – entrepreneurs</li>
+                        <li>Durée : 2016-2020</li>
+                        <li>Etat du projet : En cours</li>
+                        <li>Partenaires : A.I.M.F., Mairie de Yopougon</li>
+                    </ul>
+
                 </div>
 
 
-                <div class="container-fluid" id="container7">  
-                    <div class="row">
-                      <div class="col-6 " id="block1">
-                        <h3>– APPUI À LA DÉFINITION DE LA STRATÉGIE DE DÉVELOPPEMENT DE LA CULTURE, TOURISME ET ARTISANAT D’ART – RÉGION DU BÉLIER CÔTE D’IVOIRE –</h3><br><br>
-                             <p>Le Programme Transfo (2018-2020) s’appuie sur une démarche multi-acteurs à mettre en œuvre au niveau institutionnel et à celui des acteurs de terrain. Le volet Région du Bélier (Côte d’Ivoire) se centre sur l’appui à la définition de la stratégie de développement de la culture, tourisme et artisanat d’art, ayant comme perspective la diversification et le renforcement du tissu productif et une meilleure diffusion internationale en renforçant les acteurs locaux.</p>
-                             <p>Objectif général : Promouvoir le Conseil régional du Bélier et les communes qui le composent comme partenaires importants du ministère ivoirien de la Culture et de la Francophonie pour le développement culturel du Bélier et notamment la sauvegarde et la valorisation de son patrimoine culturel.</p><br>
-                             <p>• Lieu : Région du Bélier</p>
-                             <p>• Public ciblé : Conseil régional et aux acteurs privés et associatifs de la lecture, du patrimoine culturel immatériel et de l’artisanat d’art ainsi qu’aux opérateurs de festivals</p>
-                             <p>• Durée : triennale 2018-2023</p>
-                             <p>•Etat du projet : En cours</p>
-                             <p>• Partenaires : Région Auvergne Rhône-Alpes, le Conseil régional du Bélier, la Chambre de commerce et d’industrie de Côte d’Ivoire, et la Chambre des métiers et de l’artisanat. Clubs de francophonie du Bélier</p>
-                       </div>
-                       <div class="col-6">
-                        <div class="col-3">
-                         <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/belier1.jpg" id="image5">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/belier2.jpg" id="image6">
-                        </div>
-                       </div>
-                    </div>
-                </div>
-                  
-                 
+            </div>
+        </section>
 
-                <div class="container-fluid" id="container8">
-                    <div class="row">
-                        <div class="col-6" id="block1">
-                            <h3>– PROGRAMME TERRITOIRES ASSOCIÉS –</h3><br><br>
-                            <p>Conçu en collaboration avec des collectivités partenaires, “Territoires Associés, le développement par la culture” a la volonté de mettre à disposition des ressources sélectionnées, d’être un espace de réflexion et d’innovation sur les pratiques, en plus d’être un espace de conception de projets fédérateurs. Le programme Territoires associés vise à valoriser et à mettre en lien les évolutions et les spécificités du secteur culturel et artistique avec celles de la coopération et de la solidarité internationales.</p><br>
-                            <p>Objectif général : Contribuer à la réalisation de projets de coopération culturelle aux plans national et surtout local basés sur une plus grande intégration de la culture dans des stratégies inclusives d’animation des territoires locaux et de renforcer les capacités des collectivités locales d’Afrique francophone à encadrer et créer les conditions favorables à l’essor du secteur culturel et à la promotion de la diversité des expressions culturelles.</p><br>
-                            <p>Objectifs spécifiques :
-                                1. Identifier et recenser des initiatives de coopération culturelle Sud-Sud et Nord-Sud et les relier par une plateforme en ligne
-                                2. Fournir une assistance technique aux collectivités locales pour la conception, la réalisation et la mutualisation des projets, si possible
-                                3. Offrir un cadre de réflexion et d’action multi-acteurs pour la prise en compte de la culture dans les programmes de développement local
-                                4. Accompagner par une formation en France le directeur du développement culturel de la mairie de Brazzaville et l’attaché culturel aux méthodes d’élaboration, de planification et de suivi des politiques publiques et de préparation de notes pour le Maire.</p><br>
-                            <p>• Lieu : Kédougou, Brazzaville, Région du Bélier, Yopougon, Ouagadougou, monde</p>
-                            <p>• Durée : 2019-2020</p>
-                            <p>• Etat du projet : En cours</p>
-                            <p>• Partenaires : OIF, Région Auvergne Rhône-Alpes, le département de l’Isère, la Mairie de Yopougon, la ville de Grenoble, UNESCO</p>
-                        </div>
-                        <div class="col-6">
-                            <div class="col-3">
-                                <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/territoires2.jpg" id="image7">
-                            </div>
-                            <div class="col-3">
-                                <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/territoires1.jpg" id="image8">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="container-fluid" id="container4">
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="https://cdn.aimf.asso.fr/wp-content/uploads/2022/09/Yopougon-Maison-des-savoirs-1024x683.jpg" id="image">
-                        </div>
-                        <div class="col-6" id="block1">
-                            <h3>– MÉDIATHÈQUE MAISON DE SAVOIRS ET DES JEUNES À YOPOUGON, CÔTE D’IVOIRE –</h3><br><br>
-                            <p>La coopération de la Mairie de Yopougon avec l’AIMF vise à créer une Médiathèque Maison des Savoirs et des Jeunes qui servira de tête de réseau pour le développement de la lecture et des actions relatives à la citoyenneté et à la jeunesse. En tant que tête du réseau municipal de lecture publique qui est en cours de constitution, la Médiathèque-Maison des Savoirs et des Jeunes sera érigée en service de la Lecture Publique.</p><br>
-                            <p>Le projet fait suite à un diagnostic des ressources socioculturelles de la Commune, des besoins des populations et des actions prioritaires à mettre en œuvre. Une étude préalable pour le projet d’équipement et sa réalisation a également été effectuée en partenariat avec les services de la Mairie, l’agence d’architecture et d’urbanisme AXO, avec le soutien de la coopération française</p><br>
-                            <p>C’est dans ce cadre que Culture et Développement a identifié l’A.I.M.F, dont le Maire de Yopougon a sollicité l’appui technique et financier.</p><br>
-                            <p>• Lieu : Commune de Yopougon, Côte d’Ivoire Public ciblé : Tout public (adultes et jeunesse), public en formation : alphabétisation – formation professionnelle – formation scolaire et universitaire – artisans – entrepreneurs</p>
-                            <p>• Durée : 2016-2020</p>
-                            <p>• Etat du projet : En cours</p>
-                            <p>• Partenaires : A.I.M.F., Mairie de Yopougon</p>
-                        </div>
-                    </div>
+        <section id="projet_8">
+            <div class="row">
+                <div class="col-md-8 ">
+                    <h2>APPUI À LA GOUVERNANCE CULTURELLE DU DÉPARTEMENT DE KÉDOUGOU</h2>
+                    <p>Culture et Développement collabore avec le Conseil Départemental de Kédougou pour le
+                        renforcement institutionnel dans le domaine de la culture. Il s’agit d’un programme
+                        triennal de
+                        soutien aux acteurs publics et privés du développement culturel dans une approche
+                        intégrée :
+                        vers un projet de développement culturel du département de Kédougou.</p>
+                    <p>Les axes prioritaires sont : l’appui à la gouvernance de la collectivité, élaboration
+                        d’un schéma de développement culturel, conception d’un projet de pépinière pour les
+                        entrepreneurs culturels et d’un programme « trésors vivants » pour la valorisation économique
+                        des
+                        métiers et savoirs-traditionnels, diversification de la production locale.</p>
+                    <ul>
+                        <li>Lieu : Département de Kédougou, Sénégal ; Département de l’Isère</li>
+                        <li>Directs : Élus et agents du Conseil Départemental de Kédougou et des Communes du
+                            territoire
+                            ; OSC et acteurs culturels de Kédougou</li>
+                        <li>Durée : 2013 - ?</li>
+                        <li>Etat du projet : En cours</p>
+                        <li>Partenaires : Département de l’Isère</li>
+                    </ul>
                 </div>
 
-                <div class="container-fluid" id="container9">  
-                    <div class="row">
-                      <div class="col-6 " id="block1">
-                        <h3>– APPUI À LA GOUVERNANCE CULTURELLE DU DÉPARTEMENT DE KÉDOUGOU –</h3><br><br>
-                             <p>Culture et Développement collabore avec le Conseil Départemental de Kédougou pour le renforcement institutionnel dans le domaine de la culture. Il s’agit d’un programme triennal de soutien aux acteurs publics et privés du développement culturel dans une approche intégrée : vers un projet de développement culturel du département de Kédougou.</p>
-                             <p>Les axes prioritaires sont : l’appui à la gouvernance de la collectivité, élaboration d’un schéma de développement culturel, conception d’un projet de pépinière pour les entrepreneurs culturels et d’un programme « trésors vivants » pour la valorisation économique des métiers et savoirs-traditionnels, diversification de la production locale.</p><br>
-                             <p>• Lieu : Département de Kédougou, Sénégal ; Département de l’Isère</p>
-                             <p>• Directs : Élus et agents du Conseil Départemental de Kédougou et des Communes du territoire ; OSC et acteurs culturels de Kédougou</p>
-                             <p>• Durée : 2013 - ?</p>
-                             <p>•Etat du projet : En cours</p>
-                             <p>• Partenaires : Département de l’Isère</p>
-                       </div>
-                       <div class="col-6">
-                        <div class="col-3">
-                         <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/kedougou1.jpg" id="image9">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/kedougou2.jpg" id="image10">
-                        </div>
-                       </div>
-                    </div>
+                <div class="col-md-4">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/kedougou1.jpg"
+                        class="img-fluid mb-5">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/kedougou2.jpg"
+                        class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <section id="projet_9">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/francophonie2.jpg"
+                        class="img-fluid mb-5">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/francophonie1.jpg"
+                        class="img-fluid">
+                </div>
+                <div class="col-md-7">
+                    <h2>PROGRAMME FRANCOPHONIES EN ACTION. LA CULTURE, UN CAPITAL À VALORISER POUR LES RÉGIONS
+                        ET LES
+                        VILLES DE CÔTE D’IVOIRE</h2>
+                    <p>Soucieuse de montrer la francophonie en action dans le cadre des projets locaux de
+                        développement
+                        et de promotion de la diversité culturelle, la Commission Nationale de la Francophonie
+                        a signé
+                        avec Culture et développement une convention de partenariat pour accompagner les
+                        collectivités
+                        locales de Côte d’Ivoire qui souhaitent s’engager dans cette voie.</p><br>
+                    <p>En renforçant et en élargissant l’action du Proxitour/CNF, il s’agit aussi d’appuyer
+                        par des
+                        informations et la mise en réseau les clubs de jeunes et de femmes qui opèrent sur
+                        leur
+                        territoire pour renforcer la francophonie et la diversité culturelle et linguistique.
+                    </p>
+                    <ul>
+                        <li>Lieu : Côte d’Ivoire </li>
+                        <li>Public cible : Fonctionnaires Commission Nationale et en région</li>
+                        <li>Durée : 2018-2020</li>
+                        <li>Partenaires : Commission Nationale de la Francophonie Côte d’Ivoire, OIF, Conseil
+                            Régional du
+                            Bélier, Mairie de Tiébissou</li>
+                        <li>Budget : 11 250 €</li>
+                    </ul>
                 </div>
 
-                <div class="container-fluid" id="container10">
-                    <div class="row">
-                        <div class="col-6" id="block1">
-                            <h3>– PROGRAMME FRANCOPHONIES EN ACTION. LA CULTURE, UN CAPITAL À VALORISER POUR LES RÉGIONS ET LES VILLES DE CÔTE D’IVOIRE –</h3><br><br>
-                            <p>Soucieuse de montrer la francophonie en action dans le cadre des projets locaux de développement et de promotion de la diversité culturelle, la Commission Nationale de la Francophonie a signé avec Culture et développement une convention de partenariat pour accompagner les collectivités locales de Côte d’Ivoire qui souhaitent s’engager dans cette voie.</p><br>
-                            <p>En renforçant et en élargissant l’action du Proxitour/CNF, il s’agit aussi d’appuyer par des informations et la mise en réseau les clubs de jeunes et de femmes qui opèrent sur leur territoire pour renforcer la francophonie et la diversité culturelle et linguistique.</p><br>
-                            <p>• Lieu : Côte d’Ivoire </p>
-                            <p>• Public cible : Fonctionnaires Commission Nationale et en région</p>
-                            <p>• Durée : 2018-2020</p>
-                            <p>• Partenaires : Commission Nationale de la Francophonie Côte d’Ivoire, OIF, Conseil Régional du Bélier, Mairie de Tiébissou</p>
-                            <p>• Budget : 11 250 €</p>
-                        </div>
-                        <div class="col-6">
-                            <div class="col-3">
-                                <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/francophonie2.jpg" id="image11">
-                            </div>
-                            <div class="col-3">
-                                <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/francophonie1.jpg" id="image12">
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <section id="projet_10">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/yopcrealab_web.jpg"
+                        class="img-fluid">
                 </div>
-
-                <div class="container-fluid" id="container2">  
-                    <div class="row">
-                      <div class="col-6">
-                        <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/yopcrealab_web.jpg" id="image">
-                      </div>  
-                      <div class="col-6 " id="block1">
-                        <h3>– YOP CREALAB : LE TIERS-LIEU DE YOPOUGON –</h3><br><br>
-                             <p>Le Yop.CRÉALAB est un tiers lieu et fab.lab (laboratoire créatif) mis en place par Culture et Développement et ses partenaires à Yopougon, en Côte d’Ivoire dont la Mairie de Yopougon. Il s’agit d’un lieu communautaire dédié à la créativité, et l’innovation dans le cadre de l’Économie sociale et solidaire, ainsi qu’au renforcement de la cohésion sociale en développant la production d’objets dans une logique intergénérationnelle. Le projet est conçu à l’entrecroisement de trois domaines et métiers : le numérique ; la culture et les industries culturelles et créatives ; et l’environnement.</p>
-                             <p>• Lieu : Commune de Yopougon, Côte d’Ivoire.</p>
-                             <p>• Public cible : Jeunes hommes et jeunes filles de Yopougon.</p><br>
-                             <p>• Durée : 2018 – en cours.</p>
-                             <p>• Etat du projet : En cours.</p>
-                             <p>• Partenaires : AFD, Commune de Yopougon, Conseil Communal de la Jeunesse de Yopougon, Mairie de Yopougon, Jeunesse et Action, Agence Emploi Jeunes, Association Ivoirienne des Sciences Agronomiques, la Plateforme de Services de Yopougon (PFS Yop).</p>
-                      </div>
-                    </div>
-                </div>    
-
-
-                <div class="container-fluid" id="container11">  
-                    <div class="row">
-                      <div class="col-6 " id="block1">
-                        <h3>– APPUI À LA GOUVERNANCE CULTURELLE DU DÉPARTEMENT DE KÉDOUGOU –</h3><br><br>
-                             <p>Culture et Développement collabore avec le Conseil Départemental de Kédougou pour le renforcement institutionnel dans le domaine de la culture. Il s’agit d’un programme triennal de soutien aux acteurs publics et privés du développement culturel dans une approche intégrée : vers un projet de développement culturel du département de Kédougou.</p>
-                             <p>Les axes prioritaires sont : l’appui à la gouvernance de la collectivité, élaboration d’un schéma de développement culturel, conception d’un projet de pépinière pour les entrepreneurs culturels et d’un programme « trésors vivants » pour la valorisation économique des métiers et savoirs-traditionnels, diversification de la production locale.</p><br>
-                             <p>• Lieu : Département de Kédougou, Sénégal ; Département de l’Isère</p>
-                             <p>• Directs : Élus et agents du Conseil Départemental de Kédougou et des Communes du territoire ; OSC et acteurs culturels de Kédougou</p>
-                             <p>• Durée : 2013 - ?</p>
-                             <p>•Etat du projet : En cours</p>
-                             <p>• Partenaires : Département de l’Isère</p>
-                       </div>
-                       <div class="col-6">
-                        <div class="col-3">
-                         <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/culture1.jpg" id="image13" class="responsive">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/culture2.jpg" id="image14" class="responsive">
-                        </div>
-                       </div>
-                    </div>
+                <div class="col-md-6" id="block1">
+                    <h2>YOP CREALAB : LE TIERS-LIEU DE YOPOUGON</h2><br><br>
+                    <p>Le Yop.CRÉALAB est un tiers lieu et fab.lab (laboratoire créatif) mis en place par Culture
+                        et
+                        Développement et ses partenaires à Yopougon, en Côte d’Ivoire dont la Mairie de Yopougon.
+                        Il
+                        s’agit d’un lieu communautaire dédié à la créativité, et l’innovation dans le cadre de
+                        l’Économie sociale et solidaire, ainsi qu’au renforcement de la cohésion sociale en
+                        développant la production d’objets dans une logique intergénérationnelle. Le projet est
+                        conçu à l’entrecroisement de trois domaines et métiers : le numérique ; la culture et
+                        les
+                        industries culturelles et créatives ; et l’environnement.</p>
+                    <ul>
+                        <li>Lieu : Commune de Yopougon, Côte d’Ivoire.</li>
+                        <li>Public cible : Jeunes hommes et jeunes filles de Yopougon.</li>
+                        <li>Durée : 2018 – en cours.</li>
+                        <li>Etat du projet : En cours.</li>
+                        <li>Partenaires : AFD, Commune de Yopougon, Conseil Communal de la Jeunesse de Yopougon, Mairie
+                            de
+                            Yopougon, Jeunesse et Action, Agence Emploi Jeunes, Association Ivoirienne des Sciences
+                            Agronomiques, la Plateforme de Services de Yopougon (PFS Yop).</li>
+                    </ul>
                 </div>
-               </main>
-        </body>
-</html>        
+            </div>
+        </section>
+
+
+        <section id="projet_11">
+            <div class="row">
+                <div class="col-md-6 " id="block1">
+                    <h2>APPUI À LA GOUVERNANCE CULTURELLE DU DÉPARTEMENT DE KÉDOUGOU</h2><br><br>
+                    <p>Culture et Développement collabore avec le Conseil Départemental de Kédougou pour le
+                        renforcement institutionnel dans le domaine de la culture. Il s’agit d’un programme triennal
+                        de
+                        soutien aux acteurs publics et privés du développement culturel dans une approche
+                        intégrée :
+                        vers un projet de développement culturel du département de Kédougou.</p>
+                    <p>Les axes prioritaires sont : l’appui à la gouvernance de la collectivité, élaboration d’un
+                        schéma de développement culturel, conception d’un projet de pépinière pour les
+                        entrepreneurs
+                        culturels et d’un programme « trésors vivants » pour la valorisation économique des
+                        métiers
+                        et savoirs-traditionnels, diversification de la production locale.</p><br>
+                    <ul>
+                        <li>Lieu : Département de Kédougou, Sénégal ; Département de l’Isère</li>
+                        <li>Directs : Élus et agents du Conseil Départemental de Kédougou et des Communes du
+                            territoire
+                            ; OSC et acteurs culturels de Kédougou</li>
+                        <li>Durée : 2013 - ?</li>
+                        <li>Etat du projet : En cours</li>
+                        <li>Partenaires : Département de l’Isère</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/culture1.jpg"
+                        class="img-fluid">
+                    <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/culture2.jpg"
+                        class="img-fluid">
+                </div>
+            </div>
+        </section>
+
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
