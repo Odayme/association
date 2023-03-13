@@ -1,229 +1,274 @@
-<!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="uft-8">
-         <title>mon site pour l'association</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" href="style.css">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"  
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </head>
 
-    <body>
-	   <header>
+<head>
+    <meta charset="uft-8">
+    <title>Mon site pour l'association</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+
         <!--création de la navbar-->
-        <nav class="navbar nav-pills flex-column flex-sm-row">
-            <ol>
-                <li><a href="#index.html" class="nav-link">présentation</a></li>
-            </ol>
-             <ol>
-                <li><a href="#container2" class="nav-link">nos chiffres</a></li>
-            </ol>
-             <ol>
-                <li><a href="#partenaires" class="nav-link">partenaires</a></li>
-            </ol>
-             <ol>
-                <li><a href="#commentaires" class="nav-link">témoignages</a></li>
-            </ol>
-            <ol>
-                <li><a href="#contact" class="nav-link">nous contacter</a></li>
-            </ol>
-             <ol>
-                <li><a href="./thématiques.html">thématiques</a></li>
-            </ol>
-            <ol>
-                <li><a href="./projets.html" class="nav-link" >projets</a></li>
-            </ol>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="img/culture-developpement.png"></a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-white" href="index.html">Présentation</a>
+                        <a class="nav-link text-white" href="#chiffres">Nos chiffres</a>
+                        <a class="nav-link text-white" href="#partenaires">Partenaires</a>
+                        <a class="nav-link text-white" href="#temoignages">Témoignages</a>
+                        <a class="nav-link text-white" href="#contact">Contact</a>
+                        <a class="nav-link text-white" href="./thématiques.html">Thématiques</a>
+                        <a class="nav-link text-white" href="./projets.html">Projets</a>
+                    </div>
+                </div>
+            </div>
         </nav>
-       </header>
-        <!--création du titre-->
-        <p id="titre" aria-label="CodePen">
-            <span data-text="C">C</span>
-            <span data-text="U">U</span>
-            <span data-text="L">L</span>
-            <span data-text="T">T</span>
-            <span data-text="U">U</span>
-            <span data-text="R">R</span>
-            <span data-text="E">E</span>
-        <br>
-            <span data-text="E">E</span>
-            <span data-text="T">T</span>
-        <br> 
-            <span data-text="D">D</span>
-            <span data-text="E">E</span>
-            <span data-text="V">V</span>
-            <span data-text="E">E</span>
-            <span data-text="L">L</span>
-            <span data-text="O">O</span>
-            <span data-text="P">P</span>
-            <span data-text="P">P</span>
-            <span data-text="E">E</span>
-            <span data-text="M">M</span>
-            <span data-text="E">E</span>
-            <span data-text="N">N</span>
-            <span data-text="T">T</span>
-        </p>
-      
-       <!--création d'un container en 2 parties pour présenter l'association-->
-       <main id="présentation">
+
+    </header>
+
+    <!--création d'un container en 2 parties pour présenter l'association-->
+    <section id="présentation" class="display-background">
         <div class="container" id="container">
-           <section class="col1"> 
-            <h2> Qui somme nous ?</h2><br>
-                <p>
-                Depuis 1962 notre association accompagne les acteurs du développement et de la culture en Afrique et dans le monde grâce à des actions 
-                    tel que la structuration de filières et l'aménagement du territoire axé sur les ressources culturelles et créatives.
-                </p>
-                <p>Depuis 1999 nos interventions sont axés autour de la structuration des fillières de l'économie créative et parallèlement sur
-                    les actions favorisant l'accés et le partage de connaissances afin de contribuer à l’émergence d’une économie de production 
-                    et de diffusion de biens et services porteurs de l’identité et de la créativité des peuples par les industries culturelles et créatives.
-                </p><br>
-            </section>
-
-            <section class="col2">
-                <h2> Comment agissons nous ? </h2><br>
-                    <p>nous nous efforçons de privilégier à la fois la recherche et l’action, Culture et développement contribue à la réflexion internationale
-                        sur le développement culturel et l’économie de la culture tout en menant des actions sur le terrain destinées à soutenir 
-                        les pratiques culturelles et à renforcer les entreprises culturelles et artistiques dans les pays du Sud.</p>
-
-                    <p>Les modes d’intervention de l’association sont divers et s’opérationnalisent avec une pluralité d’acteurs :
-                        organisations internationales – UNESCO, OIF, Commission Européenne – États – collectivités locales de France et d’Afrique – organisations professionnelles de la culture au Nord comme au Sud.</p>
+            <div class="row"> <!--création du titre-->
+                <p id="titre" aria-label="CodePen">
+                    <span data-text="C">C</span>
+                    <span data-text="U">U</span>
+                    <span data-text="L">L</span>
+                    <span data-text="T">T</span>
+                    <span data-text="U">U</span>
+                    <span data-text="R">R</span>
+                    <span data-text="E">E</span>
                     <br>
-            </section>
+                    <span data-text="E">E</span>
+                    <span data-text="T">T</span>
+                    <br>
+                    <span data-text="D">D</span>
+                    <span data-text="E">E</span>
+                    <span data-text="V">V</span>
+                    <span data-text="E">E</span>
+                    <span data-text="L">L</span>
+                    <span data-text="O">O</span>
+                    <span data-text="P">P</span>
+                    <span data-text="P">P</span>
+                    <span data-text="E">E</span>
+                    <span data-text="M">M</span>
+                    <span data-text="E">E</span>
+                    <span data-text="N">N</span>
+                    <span data-text="T">T</span>
+                </p>
+            </div>
+
+
+            <div class="vignette">
+                <h2> Qui somme nous ?</h2><br>
+                <p>
+                    Depuis 1962 notre association accompagne les acteurs du développement et de la culture en Afrique et
+                    dans le monde grâce à des actions
+                    tel que la structuration de filières et l'aménagement du territoire axé sur les ressources
+                    culturelles et créatives.
+                </p>
+                <p>Depuis 1999 nos interventions sont axés autour de la structuration des fillières de l'économie
+                    créative et parallèlement sur
+                    les actions favorisant l'accés et le partage de connaissances afin de contribuer à l’émergence
+                    d’une économie de production
+                    et de diffusion de biens et services porteurs de l’identité et de la créativité des peuples par
+                    les industries culturelles et créatives.
+                </p><br>
+            </div>
+
+            <div class="vignette">
+                <h2> Comment agissons nous ? </h2><br>
+                <p>nous nous efforçons de privilégier à la fois la recherche et l’action, Culture et développement
+                    contribue à la réflexion internationale
+                    sur le développement culturel et l’économie de la culture tout en menant des actions sur le terrain
+                    destinées à soutenir
+                    les pratiques culturelles et à renforcer les entreprises culturelles et artistiques dans les pays du
+                    Sud.</p>
+
+                <p>Les modes d’intervention de l’association sont divers et s’opérationnalisent avec une pluralité
+                    d’acteurs :
+                    organisations internationales – UNESCO, OIF, Commission Européenne – États – collectivités
+                    locales de France et d’Afrique – organisations professionnelles de la culture au Nord comme au Sud.
+                </p>
+                <br>
+            </div>
         </div>
-       </main>
-       <div id="imagemain">
-       <!--création du tableau pour les stats-->
-       <div id="image">
+    </section>
+    <section id="leschiffres" class="display-background-2">
+        <!--création du tableau pour les stats-->
+        <h2>Les chiffres</h2>
         <div class="container" id="container2">
             <table class="table-fill">
-            <thead>
-                </div>
-                <tr>
-                    <th class="text-left">CHIFFRES</th>
-                    <th class="text-left">QUI / QUOI ?</th>
-                </tr>
-            </thead>
-            <tbody class="table-hover">
-                <tr>
-                    <td class="text-left">28</td>
-                    <td class="text-left">pays couverts</td>
-                </tr>
-                <tr>
-                    <td class="text-left">1000</td>
-                    <td class="text-left">Professionnels bénéficiant directement des activités culturelles</td>
-                </tr>
-                <tr>
-                    <td class="text-left">200 000</td>
-                    <td class="text-left">Bénéficiaires indirects dans les territoires concernés</td>
-                </tr>
-                <tr>
-                    <td class="text-left">10</td>
-                    <td class="text-left">Formations en cours</td>
-                </tr>
-                <tr>
-                    <td class="text-left">3</td>
-                    <td class="text-left">Équipements en cours de construction ou d’accompagnement</td>
-                </tr>
-                <tr>
-                    <td class="text-left">5.5 millions</td>
-                    <td class="text-left">Montant des financements levés par Culture et développement pour ou avec ses partenaires, sur la période 2019-2023</td>
-                </tr>
-                <tr>
-                    <td class="text-left">6800</td>
-                    <td class="text-left">Abonnés aux réseaux sociaux</td>
-                </tr>
-                <tr>
-                    <td class="text-left">5</td>
-                    <td class="text-left">Actions de plaidoyer</td>
-                </tr>
-                <tr>
-                    <td class="text-left">200</td>
-                    <td class="text-left">Bénévoles (Siège / Terrains)</td>
-                </tr>
-            </tbody>
-            </table>
+                <thead>
         </div>
-       </div>
-        
-        <!--création des témoignages-->
-        <div id="imagecontainer">
-            <h2 id="commentaires">commentaires</h2>
-                <div class="container">
-                    <section class="col1" id="section">
-                        <img src="https://culture-et-developpement.org/wp-content/uploads/2022/09/blank-profile-picture-g1e72930d6_1280.png" alt="logo" id="logo">
-                        <h4>STÉPHANE HESSEL</h4>
-                        <h5>diplomate, résistant, écrivain</h5>
-                        <h5>(1917-2013)</h5>
-                        <p id="text">« Je retrouvais dans les objectifs à la fois l’inspiration du programme du Conseil National de la Résistance (juin 1943)<br> et le souffle de la Déclaration universelle des Droits de l’Homme (décembre 1948) (…).
-                        J’estime que C&D,<br> aujourd’hui comme il y a cinquante ans, est indispensable pour relever le défi du développement,<br> notamment à travers le renforcement des capacités, y compris en matière de droits de l’homme et de démocratie (… ) » (2012)</p>
-                    </section>
-                    <section class="col2" id="section">
-                        <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/pascual-bandeaujaune.png" alt="logo" id="logo">
-                        <h4>JORDI PASCUAL</h4>
-                        <h5>coordinateur, Comité Culture Cités Gouvernemens Locaux universelle</h5>
-                        <p id="text">« Le programme de l’organisation mondiale de Cités et Gouvernements Locaux Unis <br>– CGLU dans le domaine de la culture est inspiré par la vision, la rigueur, la capacité et l’impacte de plusieurs acteurs, parmi lesquels il y a<br>
-                        l’association Culture et Développement. Nous sommes fiers de travailler avec vous. »</p> 
-                    </section>
-                </div>
-                <!--création des partenaires-->
-        <div id="image2">
-            <h2 id="partenaires">nos partenaires</h2>
-            <br>
-            <h3 id="collectivités">collectivités territoriales</h3><br>
-                <img id="collectivitéimage" src="https://culture-et-developpement.org/wp-content/uploads/2021/11/partenaires-financiers.png" alt="logo">
-            <br>
-            <h3 id="financiers">partenaires financiers</h3><br>
-                <img id="financiersimage" src="https://culture-et-developpement.org/wp-content/uploads/2021/11/partenaires-financiers.png" alt="logo">
-            <br>
-            <h3 id="partenariat">partenariats divers</h3><br>
-                <img id="partenariatimage" src="https://culture-et-developpement.org/wp-content/uploads/2021/11/partenaires-divers.png" alt="logo">
-            <br>   
-        </div>
-         <!--formulaire de contact-->
-        <footer id="contact">
-            <div class="wrapper">
-                <div class="A">
-                    <h2 id="contacter">NOUS CONTACTER</h2>
-                    <p>47 rue d'Alembert</p>
-                    <p>38000 Grenoble - France</p>
-                    <p>Tel: (33) 4 76 46 80 29</p>
-                    <p>Email: secretariat@culture-developpement.asso.fr</p>
-                </div> 
-                <div class="B">
-                    <div class="contact-wrapper container-fluid">
-                        <div class="col-6">
-                        <form class="form-horizontal" method="post" action="contact.php">
-                            <h1 class="section-header">envoyé nous un message !</h1>
-                            <label for="name">Nom</label>
-                            <input type="text" id="name" placeholder="nom" name="name" required>
-        
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="email@mail.com" name="email" required>
+        <tr>
+            <th class="text-left">CHIFFRES</th>
+            <th class="text-left">QUI / QUOI ?</th>
+        </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr>
+                <td class="text-left">28</td>
+                <td class="text-left">pays couverts</td>
+            </tr>
+            <tr>
+                <td class="text-left">1000</td>
+                <td class="text-left">Professionnels bénéficiant directement des activités culturelles</td>
+            </tr>
+            <tr>
+                <td class="text-left">200 000</td>
+                <td class="text-left">Bénéficiaires indirects dans les territoires concernés</td>
+            </tr>
+            <tr>
+                <td class="text-left">10</td>
+                <td class="text-left">Formations en cours</td>
+            </tr>
+            <tr>
+                <td class="text-left">3</td>
+                <td class="text-left">Équipements en cours de construction ou d’accompagnement</td>
+            </tr>
+            <tr>
+                <td class="text-left">5.5 millions</td>
+                <td class="text-left">Montant des financements levés par Culture et développement pour ou avec ses
+                    partenaires, sur la période 2019-2023</td>
+            </tr>
+            <tr>
+                <td class="text-left">6800</td>
+                <td class="text-left">Abonnés aux réseaux sociaux</td>
+            </tr>
+            <tr>
+                <td class="text-left">5</td>
+                <td class="text-left">Actions de plaidoyer</td>
+            </tr>
+            <tr>
+                <td class="text-left">200</td>
+                <td class="text-left">Bénévoles (Siège / Terrains)</td>
+            </tr>
+        </tbody>
+        </table>
+    </section>
 
-                            <label for="message">Message</label>
-                            <textarea rows="10" id="message" name="message" required></textarea>
-                        </div>
-                        <div class="col-6">    
-                            <div class="advert-wrapper">
-                                <p>Données personnelles<br> J'accepte que les informations recueillies à partir de ce formulaire de contact soient transmises à l'association Culture et Développement pour qu'elle puisse traiter ma demande. En savoir plus sur la gestion de vos données et vos droits </p>
-                                <input type="radio" id="yes" name="news-question" value="yes">
-                                <label for="yes">Oui</label>
-                                <input type="radio" id="no" name="news-question" value="no">
-                                <label for="no">Non</label>
-                            <button class="send-button" id="submit" type="submit">Envoyer</button> 
-                            <a href="./crédit et données.html" id="crédit">crédit, données personelles et mentions légales</a>  
+    <!--création des témoignages-->
+    <section id="commentaires" class="display-background">
+        <h2>Commentaires</h2>
+        <div class="container">
+            <div class="vignette" id="section">
+                <img src="https://culture-et-developpement.org/wp-content/uploads/2022/09/blank-profile-picture-g1e72930d6_1280.png"
+                    alt="logo" id="logo">
+                <h4>STÉPHANE HESSEL</h4>
+                <h5>diplomate, résistant, écrivain</h5>
+                <h5>(1917-2013)</h5>
+                <p>« Je retrouvais dans les objectifs à la fois l’inspiration du programme du Conseil National
+                    de la Résistance (juin 1943) et le souffle de la Déclaration universelle des Droits de l’Homme
+                    (décembre 1948) (…).<br>
+                    J’estime que C&D, aujourd’hui comme il y a cinquante ans, est indispensable pour relever le défi
+                    du développement,notamment à travers le renforcement des capacités, y compris en matière de
+                    droits de l’homme et de démocratie (… ) » (2012)</p>
+            </div>
+            <div class="vignette" id="section">
+                <img src="https://culture-et-developpement.org/wp-content/uploads/2021/11/pascual-bandeaujaune.png"
+                    alt="logo" id="logo">
+                <h4>JORDI PASCUAL</h4>
+                <h5>coordinateur, Comité Culture Cités Gouvernemens Locaux universelle</h5>
+                <p>« Le programme de l’organisation mondiale de Cités et Gouvernements Locaux Unis – CGLU
+                    dans le domaine de la culture est inspiré par la vision, la rigueur, la capacité et l’impacte de
+                    plusieurs acteurs, parmi lesquels il y a l’association Culture et Développement. Nous sommes fiers
+                    de travailler avec vous. »</p>
+            </div>
+        </div>
+    </section>
+
+    <!--création des partenaires-->
+    <section id="partenaires" class="display-background-2">
+        <div class="container">
+
+            <div class="row">
+                <div class="col">
+                    <h2>Nos partenaires</h2>
+                    <h3>collectivités territoriales</h3>
+                    <img id="collectivitéimage" src="img/partenaires-collectivites.png" alt="logo" class="responsive">
+                    <h3>partenaires financiers</h3>
+                    <img id="financiersimage"
+                        src="https://culture-et-developpement.org/wp-content/uploads/2021/11/partenaires-financiers.png"
+                        alt="logo" class="responsive">
+                    <h3>partenariats divers</h3>
+                    <img id="partenariatimage"
+                        src="https://culture-et-developpement.org/wp-content/uploads/2021/11/partenaires-divers.png"
+                        alt="logo" class="responsive">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="display-background">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="vignette">
+                        <h2 id="contacter">NOUS CONTACTER</h2>
+                        <p>47 rue d'Alembert</p>
+                        <p>38000 Grenoble - France</p>
+                        <p>Tel: (33) 4 76 46 80 29</p>
+                        <p>Email: secretariat@culture-developpement.asso.fr</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <!--formulaire de contact-->
+                    <form class="form-horizontal" method="post" action="contact.php">
+                        <h2>Envoyez nous un message !</h2>
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" placeholder="nom" name="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="email@mail.com" name="email" required>
+
+                        <label for="message">Message</label>
+                        <textarea rows="10" id="message" name="message" required></textarea>
+
+
+                        <div>
+                            <p>Données personnelles<br> J'accepte que les informations recueillies à partir de ce
+                                formulaire de contact soient transmises à l'association Culture et Développement
+                                pour
+                                qu'elle puisse traiter ma demande. En savoir plus sur la gestion de vos données et
+                                vos
+                                droits </p>
+                            <input type="radio" id="yes" name="news-question" value="yes">
+                            <label for="yes">Oui</label>
+                            <input type="radio" id="no" name="news-question" value="no">
+                            <label for="no">Non</label>
+                            <br>
+                            <button class="send-button" id="submit" type="submit">Envoyer</button>
+                            <br>
+                            <a href="./crédit et données.html" id="crédit">crédit, données personelles et mentions
+                                légales</a>
                             <!--création du bouton pour remonter et du petit rappel-->
                             <p id="rappel">n'oubliez pas de regarder nos thèmatiques et projets</p>
                             <a href="#" id="bouton" class="btn btn-default">Retour en haut ↑</a>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+
                 </div>
-            </footer>    
+            </div>
         </div>
-    </div>
-    </body>
+    </section>
+    <footer> copyright @2023</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
