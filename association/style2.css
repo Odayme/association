@@ -1,121 +1,112 @@
-
-html, body {
-    overflow: auto;
+html,
+body {
+  overflow: auto;
 }
+
 /** navbar **/
-header {
-    background-color: black;
-    }
 
-    .navbar {
-    width: auto;
-    height: auto;
-    display: flex;
+.nav-link:before {
+
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transition: all 0.2s;
+}
+
+ol {
+  list-style: none;
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  margin: 0 10px;
+  padding: 10px 1px;
+  position: relative;
+  text-align: center;
+  min-width: 115px;
+  transition: all 0.2s;
+  transition-delay: 0.2s;
+}
+
+.nav-link a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.nav-link:hover::before {
+  bottom: 2em;
+  background: rgb(255, 63, 63);
+}
+
+.nav-link:hover {
+  background: rgb(255, 63, 63);
+}
+
+
+
+
+.vignette h2 {
+  font-size: 1.6em;
+}
+
+
+
+@media (max-width: 991px) {
+  .nav-link:before {
+    background: #ffffff0d;
+  }
+}
+
+/** main **/
+
+main {
+  text-align: center;
+  margin-top: 70px;
+
+}
+
+h3,
+h1 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#usage {
+  margin-top: 30px;
+}
+
+#bouton {
+  background-color: black;
+  color: white;
+}
+
+#rappel {
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
     justify-content: center;
-    align-items: center;
-    overflow: auto;
-    
-    }
+  }
+}
 
-    ol {
-    list-style: none;
-    display: flex;
-    font-size: 1.2rem;
-    }
+/** bouton haut de la page **/
+#bouton {
+  background-color: black;
+  color: white;
+}
 
-    ol li {
-        margin: 0 20px;
-        padding: 10px 20px;
-        position: relative;
-        transition: all 0.2s;
-        transition-delay: 0.2s;
-    }
+#rappel {
+  font-size: 20px;
+}
 
-    ol li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    ol li::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: white;
-    transition: all 0.2s;
-    }
-
-    ol li:hover::before {
-        bottom: 40px;
-        background: rgb(255, 63, 63);
-    }
-
-    ol li:hover {
-        background: rgb(255, 63, 63);
-    }
-
-    .navbar h2 {
-        color: white;
-        text-align: left;
-        justify-content: right;
-    }
-
-
-    div.table-title {
-    display: block;
-    margin: auto;
-    max-width: 600px;
-    padding:5px;
-    width: 100%;
-    }
-
-    .table-title h3 {
-    color: #fafafa;
-    font-size: 30px;
-    font-weight: 400;
-    font-style:normal;
-    font-family: "Roboto", helvetica, arial, sans-serif;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-    text-transform:uppercase;
-    }
-
-    /** main **/
-
-    main {
-        text-align: center;
-        margin-top: 70px;
-       
-    }
-
-    h3, h1 {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-
-    #usage {
-        margin-top: 30px;
-    }
-
-    #bouton {
-        background-color: black;
-        color: white;
-      }
-
-      #rappel {
-        font-size: 20px;
-      }
-    
-       /** bouton haut de la page **/
-       #bouton {
-        background-color: black;
-        color: white;
-      }
-
-      #rappel {
-        font-size: 20px;
-      }
-      footer {
-        text-align: center;
-      }
+footer {
+  text-align: center;
+}
